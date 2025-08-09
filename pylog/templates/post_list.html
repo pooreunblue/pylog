@@ -7,7 +7,13 @@
       <li>
         <h2>{{ post.title }}</h2>
         <p>{{ post.content}}</p>
-        <div>{{ post.comment_set.all }}</div>
+        <ul>
+            {% for comment in post.comment_set.all %}
+                <li>{{ comment.content }}</li>
+            {% empty %}
+                <li>아직 댓글이 없습니다.</li>
+            {% endfor %}
+        </ul>
       </li>
     {% endfor %}
   </ul>
