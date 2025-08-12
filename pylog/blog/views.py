@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from blog.models import Post
 
 def post_list(request):
@@ -21,6 +21,9 @@ def post_add(request):
     if request.method == "POST":
         title = request.POST["title"]
         content = request.POST["content"]
-    else:
-        ...
+        post = Post.objects.create(
+            title=title,
+            content=content,
+        )
+        return redirect(f"/posts/{post.id}/")
     return render(request, "post_add.html")
