@@ -10,7 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", index),
     path("posts/", post_list),
-    path("posts/1/", post_detail),
+    path("posts/<int:post_id>/", post_detail),
 ]
 urlpatterns += static(
     # URL의 접두어가 MEDIA_URL일 때는 정적파일을 돌려준다
