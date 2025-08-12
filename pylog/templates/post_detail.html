@@ -13,6 +13,13 @@
     </div>
     <div id="post-detail">
         <p>{{ post_content|linebreaksbr }}</p>
+        <ul class="comments">
+            {% for comment in post.comment_set.all %}
+                <li class="comment">{{ comment.content }}</li>
+            {% empty %}
+                <li class="comment-empty">아직 댓글이 없습니다</li>
+            {% endfor %}
+        </ul>
     </div>
 </body>
 </html>
