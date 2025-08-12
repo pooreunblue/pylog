@@ -6,11 +6,13 @@
 </head>
 <body>
     <div id="navbar">
-        <span>pylog</span>
+        {% if post.thumbnail %}
+            <img src="{{ post.thumbnail.url }}">
+        {% endif %}
+        <span>{{ post.title }}</span>
     </div>
     <div id="post-detail">
-        <h1>Post Detail</h1>
-        <p>{{ post_id }}</p>
+        <p>{{ post_content }}</p>
     </div>
 </body>
 </html>
