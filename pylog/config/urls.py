@@ -4,13 +4,14 @@ from django.contrib import admin
 from django.urls import path
 
 from config.views import index
-from blog.views import post_list, post_detail
+from blog.views import post_list, post_detail, post_add
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", index),
     path("posts/", post_list),
     path("posts/<int:post_id>/", post_detail),
+    path("posts/add/", post_add),
 ]
 urlpatterns += static(
     # URL의 접두어가 MEDIA_URL일 때는 정적파일을 돌려준다
