@@ -16,3 +16,6 @@ def post_detail(request, post_id):
         "post": post,
     }
     return render(request, "post_detail.html", context)
+
+def post_add(request):
+    return render(request, "post_add.html")
