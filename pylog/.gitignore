@@ -1,0 +1,26 @@
+# PyCharm
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtualenv
+venv/
+.venv/
+
+# macOS
+.DS_Store
+
+# Django
+*.log
+db.sqlite3
+media/
+
+# Env files
+.env
+
+# Django settings
+pylog/config/settings.py
